@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company_id: 1
+  bmsg_id: 1
+  message: MyText
+  avatar_file_name: MyString
+  avatar_content_type: MyString
+  avatar_file_size: MyString
+  status: MyText
+
+two:
+  company_id: 1
+  bmsg_id: 1
+  message: MyText
+  avatar_file_name: MyString
+  avatar_content_type: MyString
+  avatar_file_size: MyString
+  status: MyText
