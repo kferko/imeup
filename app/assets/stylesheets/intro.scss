@@ -1,0 +1,33 @@
+// Place all the styles related to the intro controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.intro_icons {
+	width:300px;
+	height:90px;
+}
+
+.eye_intro_1 {
+	width: 90px;
+	height: 90px;
+	float: left;
+	background: url("eye_intro_1.svg") no-repeat center;
+}
+
+.me_intro_1 {
+	width: 66px;
+	height: 66px;
+	float: left;
+	padding-top:23px;
+	margin-left: 5px;
+	background: url("me_intro_1.svg") no-repeat center;
+}
+
+.up_intro_1 {
+	width: 66px;
+	height: 66px;
+	float: left;
+	padding-top:23px;
+	margin-left: 12px;
+	background: url("up_intro_1.svg") no-repeat center;
+}

@@ -1,0 +1,2 @@
+class UserMsgController < ApplicationController
+end

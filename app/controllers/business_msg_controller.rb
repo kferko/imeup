@@ -1,0 +1,2 @@
+class BusinessMsgController < ApplicationController
+end

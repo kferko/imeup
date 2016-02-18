@@ -1,0 +1,31 @@
+@import 'palette';
+@import 'fonts';
+@import 'shapes';
+
+body {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100vw;
+	height:100vh;
+	background-color: $bkg;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.allc { 
+	@include border-radius(10px); 
+}
+
+.introbox {
+	@include border-radius(10px);
+	background-color: $lpurple;
+	width: 98%;
+	height: 98%;
+	position:fixed;
+	top:0;
+	left:0;
+	margin-top:1%;
+	margin-left:1%;
+}

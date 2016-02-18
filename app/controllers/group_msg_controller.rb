@@ -1,0 +1,2 @@
+class GroupMsgController < ApplicationController
+end
