@@ -1,6 +1,26 @@
 Rails.application.routes.draw do
+  # get '/home' => 'home#index'
+
+  # get '/open_chat' => 'home#open_chat'
+
   devise_for :users
-  get 'intro/index'
+
+
+  authenticated :user do
+    get '/home' => 'home#index'
+  end
+
+  unauthenticated :user do
+    devise_scope :user do
+      get "/login" => "devise/sessions#new"
+    end
+  end
+
+  resources :conversations do
+    resources :user_msgs
+  end
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

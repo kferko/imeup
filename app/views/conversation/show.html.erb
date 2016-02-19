@@ -1,0 +1,25 @@
+<div class="upboxhead">
+  <div class="upboxtitle">
+    <i class="fa fa-comments"></i>
+
+    <h1><%= @reciever.name %> </h1>
+  </div>
+  <div class="upboxoptions">
+    <%= link_to "<i class='fa  fa-minus'></i> ".html_safe, "home#", class: "toggleUpBox", "data-cid" => @conversation.id %>
+    &nbsp;&nbsp;
+    <%= link_to "<i class='fa  fa-times'></i> ".html_safe, "home#", class: "closeUp", "data-cid" => @conversation.id %>
+  </div>
+  <br clear="all"/>
+</div>
+<div class="upboxcontent">
+  <% if @messages.any? %>
+      <%= render @messages %>
+  <% end %>
+</div>
+<div class="upboxinput">
+  <%= form_for([@conversation, @message], :remote => true, :html => {id: "conversation_form_#{@conversation.id}"}) do |f| %>
+      <%= f.text_area :body, class: "upboxtext", "data-cid" => @conversation.id %>
+  <% end %>
+</div>
+
+<%= subscribe_to conversation_path(@conversation) %>

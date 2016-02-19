@@ -7,10 +7,10 @@ class Conversation < ActiveRecord::Base
   	validates_uniqueness_of :user_a_id, :scope => :user_b_id
 
   	scope :involving, -> (user) do
-    	where("conversations.sender_id =? OR conversations.recipient_id =?",user.id,user.id)
+    	where("conversations.user_a_id =? OR conversations.user_b_id =?",user.id,user.id)
   end
 
-  	scope :between, -> (sender_id,recipient_id) do
-    	where("(conversations.sender_id = ? AND conversations.recipient_id =?) OR (conversations.sender_id = ? AND conversations.recipient_id =?)", sender_id,recipient_id, recipient_id, sender_id)
+  	scope :between, -> (user_a_id,user_b_id) do
+    	where("(conversations.user_a_id = ? AND conversations.user_b_id =?) OR (conversations.user_a_id = ? AND conversations.user_b_id =?)", user_a_id, user_b_id, user_b_id, user_a_id)
   end
 end
