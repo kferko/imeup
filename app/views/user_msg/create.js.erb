@@ -1,0 +1,16 @@
+<% publish_to @path do %>
+    var id = "<%= @conversation.id %>";
+    var chatbox = $("#upbox_" + id + " .upboxcontent");
+    var sender_id = "<%= @user_msg.user.id %>";
+    var reciever_id = $('meta[name=user-id]').attr("content");
+
+    chatbox.append("<%= j render( partial: @user_msg ) %>");
+    chatbox.scrollTop(chatbox[0].scrollHeight);
+
+    if(sender_id != reciever_id){
+    	chatBox.chatWith(id);
+        chatbox.children().last().removeClass("self").addClass("other");        
+    	chatbox.scrollTop(chatbox[0].scrollHeight);
+        chatBox.notify();
+    }
+<% end %>
