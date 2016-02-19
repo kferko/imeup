@@ -1,4 +1,4 @@
 class UserMsg < ActiveRecord::Base
-	has_one :user
-	has_many :conversations
+	belongs_to :user
+	belongs_to :conversation
 end
