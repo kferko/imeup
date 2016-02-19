@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219144651) do
+ActiveRecord::Schema.define(version: 20160219161528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(version: 20160219144651) do
     t.string   "user_id"
     t.string   "title"
     t.string   "msg_string"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "conversation_id"
   end
 
   create_table "business_msgs", force: :cascade do |t|
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 20160219144651) do
     t.integer  "user_b_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "status"
   end
 
   create_table "group_msgs", force: :cascade do |t|
@@ -115,8 +117,9 @@ ActiveRecord::Schema.define(version: 20160219144651) do
 
   create_table "user_msgs", force: :cascade do |t|
     t.text     "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "conversation_id"
   end
 
   create_table "users", force: :cascade do |t|
