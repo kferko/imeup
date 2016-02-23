@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # get '/home' => 'home#index'
     get '/' => 'intro#index'
 
-  # get '/open_chat' => 'home#open_chat'
+  get '/up_box' => 'home#up_box'
 
   devise_for :users
 
