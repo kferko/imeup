@@ -4,7 +4,16 @@ class HomeController < ApplicationController
   		redirect_to root_path
   	end
   end
-  # def open_chat
-  # 	@conversation = Conversation.find_by(user_a_id: current_user.id, user_b_id: params[:data_rip])
-  # end
+  def up_box
+  	@open = true
+  	@conversation = Conversation.find_by(user_a_id: current_user.id, user_b_id: params[:id])
+
+  	if !@conversation
+  		@conversation = Conversation.find_by(user_a_id: params[:id], user_b_id: current_user.id)
+
+  		if !@conversation
+  			@open = false
+  		end
+  	end
+  end
 end
