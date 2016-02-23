@@ -13,4 +13,6 @@ class User < ActiveRecord::Base
 	has_many :conversations, :foreign_key => :user_a_id
 	has_and_belongs_to_many :contacts, :join_table => :conversations, :foreign_key => :user_b_id, :association_foreign_key => :user_a_id, class_name: 'User'
 	has_many :subscriptions
+
+	mount_uploader :avatar, AvatarUploader
 end

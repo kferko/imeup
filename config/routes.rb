@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # get '/home' => 'home#index'
+    get '/' => 'intro#index'
 
   # get '/open_chat' => 'home#open_chat'
 

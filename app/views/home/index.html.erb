@@ -1,10 +1,30 @@
-<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-<% current_user.contacts.each_with_index do |contact, index| %>
-    <tr>
-      <td><%= index +=1 %></td>
-      <td><%= contact.email %></td>
-      <td>
-        <%= link_to "Send Message", "home#", class: "btn btn-success btn-xs start-conversation", "data-sid" => current_user.id, "data-rip" => contact.id %>
-      </td>
-    </tr>
-<% end %>
+<div class="grid-stack top">
+    <div class="grid-stack-item" style = "background-color: rgb(95,255,128);"
+        data-gs-x="0" data-gs-y="0"
+        data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content"></div>
+    </div>
+    <div class="grid-stack-item" style = "background-color: rgb(52,214,255);"
+        data-gs-x="1" data-gs-y="0"
+        data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content"></div>
+    </div>
+    <div class="grid-stack-item" style = "background-color: rgb(255,56,155);"
+        data-gs-x="2" data-gs-y="0"
+        data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content"></div>
+    </div>
+</div>
+
+<div class="grid-stack main">
+    <div class="grid-stack-item" style = "background-color: rgb(52,214,255);"
+        data-gs-x="0" data-gs-y="0"
+        data-gs-width="4" data-gs-height="2">
+            <div class="grid-stack-item-content"></div>
+    </div>
+    <div class="grid-stack-item" style = "background-color: rgb(52,214,255);"
+        data-gs-x="4" data-gs-y="0"
+        data-gs-width="4" data-gs-height="4">
+            <div class="grid-stack-item-content"></div>
+    </div>
+</div>
