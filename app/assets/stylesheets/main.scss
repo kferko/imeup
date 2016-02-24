@@ -15,6 +15,8 @@ body {
 }
 
 .container {
+	top:0;
+	left:0;
 	width: 100vw;
 	height: 100vh;
 }
@@ -37,3 +39,46 @@ body {
 	justify-content:center;
 	align-items:center;
 }
+
+.signout {
+	width: 50px;
+	height: 35px;
+	background: url("usersignout.svg") no-repeat center;
+	margin-top: 25%;
+	margin-left: 25%;
+}
+
+.topicons {
+	width: 100%;
+	position: absolute;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.eye_top_1 {
+	width: 90px;
+	height: 90px;
+	float: left;
+	background: url("eye_intro_2.svg") no-repeat center;
+}
+
+.me_top_1 {
+	width: 66px;
+	height: 66px;
+	float: left;
+	padding-top:23px;
+	margin-left: 5px;
+	background: url("me_intro_3.svg") no-repeat center;
+}
+
+.up_top_1 {
+	width: 66px;
+	height: 66px;
+	float: left;
+	padding-top:23px;
+	margin-left: 12px;
+	background: url("up_intro_2.svg") no-repeat center;
+}
+
+
