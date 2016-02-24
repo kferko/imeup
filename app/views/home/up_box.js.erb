@@ -65,8 +65,15 @@ $(document).ready(function(){
 	        	$upb.append('<p>' + $(this).val() + '</p>');
 	        	$upb[0].scrollTop = $upb[0].scrollHeight;
 	        	$(this).val('');
-    }
-})
+			    }
+			})
+			$( '.upbox' ).bind( 'mousewheel DOMMouseScroll', function ( e ) {
+			    var e0 = e.originalEvent,
+			        delta = e0.wheelDelta || -e0.detail;
+			    
+			    this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+			    e.preventDefault();
+			});
 		}
 	<% end %>
 });

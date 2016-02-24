@@ -1,10 +1,10 @@
 <div class="introbox">
   <div class="intro_icons">
     <div class="si_bubble">
-    <h2>sign in</h2>
+    <!-- <h2>sign in</h2> -->
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
-            <%= f.email_field :email, autofocus: true, :placeholder => "email",class: 'em_entry' %>
+            <%= f.email_field :email, autofocus: true, :placeholder => "email",class: 'em_entry entryfirst' %>
           </div>
 
           <div class="field">
