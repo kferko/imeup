@@ -292,7 +292,7 @@ DEPENDENCIES
   faye-websocket (= 0.10.0)
   formtastic
   gridstack-js-rails
-  guard-livereload
+  guard-livereload (~> 2.5.2)
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails

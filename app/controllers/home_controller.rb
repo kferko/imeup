@@ -13,7 +13,10 @@ class HomeController < ApplicationController
 
   		if !@conversation
   			@open = false
-  		end
+  		else
+        instance_variable_set("@archive_#{@conversation.id}", Archive.new)
+      end
+
   	end
   end
 end

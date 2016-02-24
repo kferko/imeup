@@ -1,11 +1,60 @@
 // Place all the styles related to the intro controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'palette';
+@import 'fonts';
+@import 'shapes';
 
 .intro_icons {
 	width:300px;
 	height:90px;
 	z-index: 1;
+}
+
+.intro_bubble {
+	width:150px;
+	height:150px;
+	background: url("r_bubble.svg") no-repeat center;
+	z-index: 3;
+	justify-content:center;
+	align-items:center;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 300;
+	position: absolute;
+	margin-top: -130px;
+	margin-left: 100px;
+}
+.intro_bubble a:link{
+	text-decoration: none;
+	color: $dpurple;
+}
+.intro_bubble a:hover{
+	text-decoration: none;
+	font-weight: 700;
+	color: $dpink;
+}
+.intro_si {
+	width: 100%;
+	height: 40px;
+	margin-top: 32px;
+	// margin-left: -40px;
+	text-align: center;
+	// position: absolute;
+}
+.intro_or {
+	height: 40px;
+	margin-top: -15px;
+	// margin-left: -60px;
+	text-align: center;
+	// position: absolute;
+	color: $mgrey;
+}
+.intro_li {
+	height: 40px;
+	margin-top: -15px;
+	// margin-left: -50px;
+	text-align: center;
+	// position: absolute;
 }
 
 .eye_intro_1 {
@@ -23,6 +72,14 @@
 	margin-left: 5px;
 	background: url("me_intro_1.svg") no-repeat center;
 }
+.me_intro_2 {
+	width: 66px;
+	height: 66px;
+	float: left;
+	padding-top:23px;
+	margin-left: 5px;
+	background: url("me_intro_2.svg") no-repeat center;
+}
 
 .up_intro_1 {
 	width: 66px;
@@ -32,3 +89,149 @@
 	margin-left: 12px;
 	background: url("up_intro_1.svg") no-repeat center;
 }
+
+
+.si_bubble {
+	width:300px;
+	height:300px;
+	background: url("r_bubble2.svg") no-repeat center;
+	z-index: 3;
+	justify-content:center;
+	align-items:center;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 300;
+	position: absolute;
+	margin-top: -280px;
+	margin-left: 35px;
+	text-align: center;
+}
+.si_bubble a:link{
+	text-decoration: none;
+	color: $dpurple;
+}
+.si_bubble a:hover{
+	text-decoration: none;
+	font-weight: 700;
+	color: $dpink;
+}
+.si_bubble h2{
+	font-size: 1.2em;
+	font-weight: 300;
+	color: $dpurple;
+}
+.si_bubble p{
+	font-size: 0.6em;
+	font-weight: 300;
+}
+
+.em_entry {
+	width: 160px;
+	height: 2em;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 10px;
+	border: none;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 300;
+	font-size: 1em;
+	color: white;
+}
+Input:focus, textarea:focus {
+    background-color: $lblue;
+    outline: none;
+    border-radius: 10px;
+    color:white;
+ 	text-align:center;
+}
+
+.field_text {
+	font-family: 'Comfortaa', cursive;
+	font-weight: 300;
+	font-size: 0.8em;
+	text-transform: lowercase;
+	color: $lpink;
+}
+.si_button {
+	width: 120px;
+	height: 2em;
+	margin-top: 5px;
+	border: none;
+	background: none;
+	border-radius: 10px;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 300;
+	font-size: 1em;
+	color: $fpurple;
+}
+.si_button:hover {
+	background: $fpurple;
+	color: white;
+}
+.siu_bott{
+	margin-top: 4px;
+}
+.siu_bott a:link, a:visited{
+	font-family: 'Comfortaa', cursive;
+	font-weight: 300;
+	font-size: 0.8em;
+	color: $mgrey;
+}
+
+// S I G N  U P 
+
+.su_bubble {
+	width:300px;
+	height:300px;
+	background: url("l_bubble.svg") no-repeat center;
+	z-index: 3;
+	justify-content:center;
+	align-items:center;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 300;
+	position: absolute;
+	margin-top: -280px;
+	margin-left: -80px;
+	text-align: center;
+}
+.su_bubble a:link{
+	text-decoration: none;
+	color: $dpurple;
+}
+.su_bubble a:hover{
+	text-decoration: none;
+	font-weight: 700;
+	color: $dpink;
+}
+.su_bubble h2{
+	font-size: 1.2em;
+	font-weight: 300;
+	color: $dpurple;
+}
+.su_bubble p{
+	font-size: 0.6em;
+	font-weight: 300;
+}
+.su_button {
+	width: 120px;
+	height: 2em;
+	margin-top: 5px;
+	border: none;
+	background: none;
+	border-radius: 10px;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 300;
+	font-size: 1em;
+	color: $fpurple;
+}
+.su_button:hover {
+	background: $fpurple;
+	color: white;
+}
+
+.startchat {
+	width: 200px;
+	height: 200px;
+	background: $fpurple;
+}
+
+

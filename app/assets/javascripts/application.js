@@ -12,12 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require chat
 //= require user
 //= require best_in_place
 //= require websocket_rails/main
 //= require turbolinks
 //= require gridstack-js-rails-underscore
 //= require_tree .
-
-
