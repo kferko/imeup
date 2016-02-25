@@ -56,8 +56,6 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  gem 'guard-livereload', '~> 2.5.2', require: false
-  gem "rack-livereload", :group => :development
   gem "better_errors"
   gem 'quiet_assets'
   gem "awesome_print", require:"ap"

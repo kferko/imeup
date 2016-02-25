@@ -46,3 +46,11 @@ $(document).on('DOMMouseScroll mousewheel', '.Scrollable', function(ev) {
         return prevent();
     }
 });
+
+$(document).ready(function() {
+    $("a").click(function () {
+    var id = $(this).attr("rel");
+    $(".sidedisplay").hide();
+    $("#" + id).show();
+});
+});

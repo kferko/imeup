@@ -20,6 +20,13 @@ $(function () {
     };
     $('.main').gridstack(options);
 
+        options = {
+        cellHeight: 50,
+        verticalMargin: 10,
+        staticGrid: true
+    };
+    $('.bott').gridstack(options);
+
 });
 
 $('.leftbar').gridstack({
