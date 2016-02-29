@@ -1,18 +1,18 @@
 <div class="introbox">
-<div class="user_nav">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path %> |
-  <%= link_to "Login", new_user_session_path %>
-<% end %>
-</div>
 	<div class="intro_icons">
+		<div class="intro_bubble">
+		<% if user_signed_in? %>
+  			Logged in as <strong><%= current_user.email %></strong>.
+  			<%= link_to 'Edit profile', edit_user_registration_path %> |
+  			<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+		<% else %>
+  			<div class="intro_si"><%= link_to "sign up", new_user_registration_path %></div>
+  			<div class="intro_or">or</div>
+  			<div class="intro_li"><%= link_to "sign in", new_user_session_path %></div>
+		<% end %>
+	</div>
 		<div class="eye_intro_1"></div>
-		<div class="me_intro_1"></div>
+		<div class="me_intro_2"></div>
 		<div class="up_intro_1"></div>
 	</div>
-
 </div>

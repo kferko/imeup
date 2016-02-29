@@ -14,4 +14,6 @@ class User < ActiveRecord::Base
 	has_and_belongs_to_many :contacts_A, :join_table => :conversations, :foreign_key => :user_a_id, :association_foreign_key => :user_b_id, class_name: 'User'
 	has_and_belongs_to_many :contacts_B, :join_table => :conversations, :foreign_key => :user_b_id, :association_foreign_key => :user_a_id, class_name: 'User'
 	has_many :subscriptions
+
+	mount_uploader :avatar, AvatarUploader
 end

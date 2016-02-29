@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-  def index
+  def index 
+    @conversation=Conversation.all.first
   	if !current_user
   		redirect_to root_path
   	end
@@ -13,7 +14,10 @@ class HomeController < ApplicationController
 
   		if !@conversation
   			@open = false
-  		end
+  		else
+        instance_variable_set("@archive_#{@conversation.id}", Archive.new)
+      end
+
   	end
   end
 end

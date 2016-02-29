@@ -1,11 +1,87 @@
-<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-<% contacts = current_user.contacts_A + current_user.contacts_B %>
-<% contacts.each_with_index do |contact, index| %>
-    <tr>
-      <td><%= index +=1 %></td>
-      <td><%= contact.email %></td>
-      <td>
-        <%= link_to "Send Message", up_box_path(id: contact.id), remote: true, class: "btn btn-success btn-xs start-conversation" %>
-      </td>
-    </tr>
-<% end %>
+<div class="grid-stack top">
+    <div class="grid-stack-item"
+        data-gs-x="0" data-gs-y="0"
+        data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content"></div>
+    </div>
+    <div class="grid-stack-item"
+        data-gs-x="1" data-gs-y="0"
+        data-gs-width="10" data-gs-height="1">
+            <div class="grid-stack-item-content">
+            	<div class="topicons">
+					<div class="eye_top_1" id="eye_top_1"></div>
+					<div class="me_top_1" id="me_top_1"></div>
+					<div class="up_top_1" id="up_top_1"></div>
+				</div>
+            </div>
+    </div>
+    <div class="grid-stack-item"
+        data-gs-x="11" data-gs-y="0"
+        data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content"><div class="signout"><%= link_to "", destroy_user_session_path, method: :delete %></div></div>
+    </div>
+</div>
+
+<div class="grid-stack main" style= "height: 100vh;">
+    <div class="grid-stack-item"
+        data-gs-x="0" data-gs-y="0"
+        data-gs-width="2" data-gs-height="6">
+            <div class="grid-stack-item-content">
+                <div class="sidebar">
+                    <div id="contacts" class="sidedisplay">
+                    	<% contacts = current_user.contacts_A + current_user.contacts_B %>
+        				<% contacts.each_with_index do |contact, index| %>
+        				    <tr>
+        				    <br>
+        				      <td><%= contact.email %></td>
+        				      <td>
+        				        <br><%= link_to "hello", up_box_path(id: contact.id), remote: true, class: "startchat" %><br>
+        				      </td>
+        				    </tr>
+        				<% end %>
+                    </div>
+                    <div id="profile" class="sidedisplay">
+                        User's First and Last Name<br>
+                        City and State<br>
+                        Occupation<br>
+                        Age and BDay<br>
+                        Employer<br>
+                        <!-- = current_user.profile.high_school %><br> -->
+                        College
+                    </div>
+                    <div id="consearch"></div>
+                    <div id="uprequests"></div>
+                </div>
+            </div>
+    </div>
+        <div class="grid-stack-item" style= "height: 100vh"
+        data-gs-x="2" data-gs-y="0"
+        data-gs-width="10" data-gs-height="6">
+            <div class="grid-stack-item-content">
+                <div class="grid-stack chats grid-stack-nested">
+                    <div id="saver"><%= image_tag("/assets/saver.jpg") %></div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<div class="grid-stack bott">
+    <div class="grid-stack-item"
+        data-gs-x="0" data-gs-y="0"
+        data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content"><div class="ghost"></div></div>
+    </div>
+    <div class="grid-stack-item"
+        data-gs-x="1" data-gs-y="0"
+        data-gs-width="10" data-gs-height="1">
+            <div class="grid-stack-item-content"></div>
+    </div>
+    <div class="grid-stack-item"
+        data-gs-x="11" data-gs-y="0"
+        data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content"><div class="legend"></div></div>
+    </div>
+</div>
+<script>var counter = 0;</script>
+<script>var horiz = 0;</script>
+<script>var vert = 0;</script>

@@ -3,18 +3,20 @@
 @import 'shapes';
 
 body {
-	position:fixed;
+	position:relative;
 	top:0;
 	left:0;
 	width:100vw;
 	height:100vh;
 	background-color: $bkg;
-	display:flex;
+	// display:flex;
 	justify-content:center;
 	align-items:center;
 }
 
 .container {
+	top:0;
+	left:0;
 	width: 100vw;
 	height: 100vh;
 }
@@ -33,4 +35,102 @@ body {
 	left:0;
 	margin-top:1%;
 	margin-left:1%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
 }
+
+.main {
+	height: 100vh;
+}
+
+.signout {
+	width: 50px;
+	height: 35px;
+	background: url("usersignout.svg") no-repeat center;
+	margin-top: 25%;
+	margin-left: 25%;
+}
+
+// T O P
+.top {
+	margin-bottom: 30px;
+}
+.topicons {
+	width: 100%;
+	position: absolute;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.eye_top_1 {
+	width: 90px;
+	height: 90px;
+	float: left;
+	background: url("eye_intro_2.svg") no-repeat center;
+	cursor: pointer;
+}
+
+.me_top_1 {
+	width: 66px;
+	height: 66px;
+	float: left;
+	padding-top:23px;
+	margin-left: 5px;
+	background: url("me_intro_3.svg") no-repeat center;
+	cursor: pointer;
+}
+
+.up_top_1 {
+	width: 66px;
+	height: 66px;
+	float: left;
+	padding-top:23px;
+	margin-left: 12px;
+	background: url("up_intro_2.svg") no-repeat center;
+	cursor: pointer;
+}
+
+#contacts {
+	width: 100%;
+	// display: none;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 300;
+	font-size: 1em;
+	color: $dpurple;
+}
+#profile {
+	width: 100%;
+	height: 200px;
+	background: $lpink;
+	display: none;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 300;
+	font-size: 1em;
+	color: $dpurple;
+}
+
+// B O T T O M
+.bott {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.ghost {
+	width: 30px;
+	height: 30px;
+	// margin-left: 45%;
+	background: url("ghostmodebutt.svg") no-repeat center;
+}
+.legend {
+	width: 30px;
+	height: 30px;
+	margin-left: 45%;
+	background: url("infobutt.svg") no-repeat center;
+}
+
+
+
+
+

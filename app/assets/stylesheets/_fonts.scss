@@ -1,2 +1,87 @@
 // Imported Google Fonts
 @import url(https://fonts.googleapis.com/css?family=Comfortaa:400,300,700);
+
+@import 'palette';
+
+::-webkit-input-placeholder {
+ // padding-bottom: 25px;
+ color: #d0cdfa;
+ font-family: 'Comfortaa', cursive;
+ font-weight: 300;
+ text-align: center;
+}
+:-moz-placeholder { /* older Firefox*/
+ // padding-bottom: 25px;
+ color: #d0cdfa;
+ font-family: 'Comfortaa', cursive;
+ font-weight: 300;
+ text-align: center;
+}
+::-moz-placeholder { /* Firefox 19+ */ 
+ // padding-bottom: 25px;
+ color: #d0cdfa;
+ font-family: 'Comfortaa', cursive;
+ font-weight: 300;
+ text-align: center;
+} 
+:-ms-input-placeholder {
+ // padding-bottom: 25px;
+ color: #d0cdfa;
+ font-family: 'Comfortaa', cursive;
+ font-weight: 300;
+ text-align: center;
+}
+
+input[type="email"]:not(:focus),input[type="password"]:not(:focus) {
+    color: rgb(147, 39, 143);
+    text-align:center;
+}
+
+:focus::-webkit-input-placeholder {
+ color: white;
+ text-align:center;
+}
+:focus:-moz-placeholder { /* older Firefox*/
+ color: white;
+ text-align:center;
+}
+:focus::-moz-placeholder { /* Firefox 19+ */ 
+ color: white;
+ text-align:center;
+} 
+:focus:-ms-input-placeholder { 
+ color: white;
+ text-align:center;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    -webkit-text-fill-color: rgb(147, 39, 143) !important;
+}
+
+
+
+.upwrite::-webkit-input-placeholder {
+ color: $dgrey;
+ font-family: 'Comfortaa', cursive;
+ font-weight: 300;
+ text-align: left;
+}
+.upwrite:-moz-placeholder { /* older Firefox*/
+ color: $dgrey;
+ font-family: 'Comfortaa', cursive;
+ font-weight: 300;
+ text-align: left;
+}
+.upwrite::-moz-placeholder { /* Firefox 19+ */ 
+ color: $dgrey;
+ font-family: 'Comfortaa', cursive;
+ font-weight: 300;
+ text-align: left;
+} 
+.upwrite:-ms-input-placeholder {
+ color: $dgrey;
+ font-family: 'Comfortaa', cursive;
+ font-weight: 300;
+ text-align: left;
+}

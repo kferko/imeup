@@ -1,0 +1,68 @@
+$(document).ready(function(){
+	<% if @open %>
+		if($('#up_box_<%= @conversation.id %>').length == 0){
+			var box = '';
+			box += '<div class="upbox" id="up_box_<%= @conversation.id %>">';
+				box += '<% @conversation.user_msgs.each do |user_msg| %>'
+					box += '<p class="message">';
+						box += '<%= user_msg.user.email + ": " + user_msg.message %>';
+					box += '</p>';
+				box += '<% end %>'
+			box += '</div>';
+
+			box += '<div class="uptype" id="up_input_<%= @conversation.id %>">';
+				box += '<input id="UB<%= @conversation.id %>_new_message" placeholder="msgup" />';
+				box += '<input id="UB<%= @conversation.id %>_message_button" type="button" value="Send" />';
+			box += '</div>';
+
+			$('body').append(box);
+
+			//run script
+			var page_url = window.location.href;
+			var page_parts = page_url.split("/");
+
+			var dispatcher = new WebSocketRails(page_parts[2] +"/websocket");
+
+			dispatcher.on_open = function(data) {
+				console.log("Connection has been established: ", 	data);
+			};
+
+			// Enter button sends message
+			$("#UB<%= @conversation.id %>_new_message").keydown(function(event){ 
+				if(event.keyCode==13){
+					$("#UB<%= @conversation.id %>_message_button").trigger("click");
+				}
+			});
+
+			$("#UB<%= @conversation.id %>_message_button").click(function() {
+				console.log("message button clicked");
+
+				dispatcher.trigger("new_message", {
+					conversation_id: <%= @conversation.id %>,
+					body: $("#UB<%= @conversation.id %>_new_message").val()
+				});
+
+				$("#UB<%= @conversation.id %>_new_message").val("").focus();
+			});
+
+			id = "up_box_<%= @conversation.id %>";
+			channel = dispatcher.subscribe(id);
+
+			channel.bind("broadcast", function(data) {
+				newest_message = data.name + ": " + data.body;
+				console.log(newest_message);
+				$("#up_box_<%= @conversation.id %>").append("<p class=\"message\">" + newest_message + "</p>");
+			});
+			var $upb = $('.upbox');
+			$upb[0].scrollTop = $upb[0].scrollHeight;
+
+			$('.uptype').keyup(function(e) {
+	    		if (e.keyCode == 13) {
+	        	$upb.append('<p>' + $(this).val() + '</p>');
+	        	$upb[0].scrollTop = $upb[0].scrollHeight;
+	        	$(this).val('');
+    }
+})
+		}
+	<% end %>
+});
