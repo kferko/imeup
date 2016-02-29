@@ -16,7 +16,7 @@
 	margin-left: 30px;
 	margin-top: 30px;
 	border-radius: 10px;
-	padding: 56px 30px 30px 15px;
+	padding: 56px 15px 30px 15px;
 	background: $chatwall;
  	border-radius: 10px;
  	// margin-bottom: 4px;
@@ -24,8 +24,10 @@
  	-webkit-box-shadow: -2px 1px 7px 0px rgba(169, 146, 163, 0.5);
 	-moz-box-shadow:    -2px 1px 7px 0px rgba(169, 146, 163, 0.5);
 	box-shadow:         -2px 1px 7px 0px rgba(169, 146, 163, 0.5);
+	// outline: 1px solid red;
 }
 .upbox {
+	width: 100%;
 	font-family: 'Comfortaa', cursive;
  	font-weight: 300;
  	font-size: 0.9em;
@@ -38,14 +40,42 @@
 .upmsg {
 	background:white;
 	padding:8px;
+	margin-top: 5px;
 	border-radius: 10px;
 }
+.upmsgright {
+	color: $dblue;
+	width: 80%;
+	float: right;
+}
+.upmsgleft {
+	color: $dred;
+	width: 80%;
+	float: left;
+}
+
+#upactive {
+	// outline: 1px solid red;
+	opacity: 0.4;
+	transition-duration: 1s;
+}
+#upactive.opaque {
+    opacity: 1;
+    transition-duration: 1s;
+}
+#uptype.opaque{
+	opacity: 1;
+    transition-duration: 1s;
+}
+.upactive {
+	opacity: 0.4;
+}
 .uptype {
-	width: 85%;
+	width: 65%;
 	position: relative;
-	color: $lpurple;
 	margin-top: -20px;
 	margin-left: 55px;
+	display: none;
 }
 .upwrite {
 	width: 85%;
@@ -58,7 +88,7 @@
 	font-family: 'Comfortaa', cursive;
 	font-weight: 300;
 	font-size: 1em;
-	color: white;
+	color: $dpurple;
 	border-radius: 10px;
 	position: absolute;
 	z-index:4;
@@ -70,6 +100,21 @@
     border-radius: 10px;
     color:white;
     text-align: left;
+}
+.upwrite_off {
+	width: 85%;
+	height: 2em;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 1%;
+	margin-right: 2.5%;
+	border: none;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 300;
+	font-size: 1em;
+	position: absolute;
+	z-index:4;
+	background:none;
 }
 .upwritesend {
 	position: relative;
@@ -192,3 +237,14 @@
 	background: $dred;
 }
 
+.chats {
+	height:400px;
+	// float: left;
+}
+.main {
+	// float: left;
+}
+#saver {
+	width: 1px;
+	height: 1px;
+}

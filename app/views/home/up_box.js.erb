@@ -2,33 +2,58 @@ $(document).ready(function(){
 	<% if @open %>
 		if($('#up_box_<%= @conversation.id %>').length == 0){
 			var box = '';
-			box += '<div class="actionsbutt"><%= image_tag("/assets/actionsbutt.svg") %></div>'
-			box += '<div class="upuserb"></div>';
-			box += '<div class="userbanner">';
-			box += '<div class="userbstatus">this is my status</div>';
-			box += '<div class="userbname">username</div>';
-			box += '</div>';
-			box += '<div class="upcontain">';
-			box += '<div class="upchatwin">';
-			box += '<div class="msgcondupbutt"><%= image_tag("/assets/msgcondup.svg") %></div>'
-			box += '<div class="msgaddimgbutt"><%= image_tag("/assets/addimg.svg") %></div>'
-			box += '<div class="msgaddemojibutt"><%= image_tag("/assets/addemoji.svg") %></div>'
-			box += '<div class="upbox" id="up_box_<%= @conversation.id %>">';
-				box += '<% @conversation.user_msgs.each do |user_msg| %>'
-					box += '<p class="message upmsg">';
-						box += '<%= user_msg.message %>';
-					box += '</p>';
-				box += '<% end %>'
-			box += '</div>';
-			box += '</div>';
+            box += '<div class="grid-stack-item" id="upactive" tabindex="-1" data-gs-x="' + counter + '" data-gs-y="' + vert + '" data-gs-width="4" data-gs-height="6">'
+            			vert +=0; counter+=4; if(counter > 8){ counter = 0; vert += 6; }
+                box += '<div class="grid-stack-item-content">'
+                    box += '<div class="actionsbutt"><%= image_tag("/assets/actionsbutt.svg") %></div>'
+                    box += '<div class="upuserb"></div>'
+                    box += '<div class="userbanner">'
+                        box += '<div class="userbstatus">this is my status</div>'
+                        box += '<div class="userbname">username</div>'
+                    box += '</div>'
+                    box += '<div class="upcontain">'
+                    box += '<div class="upchatwin">'
+                    box += '<div class="msgcondupbutt"><%= image_tag("/assets/msgcondup.svg") %></div>'
+                    box += '<div class="msgaddimgbutt"><%= image_tag("/assets/addimg.svg") %></div>'
+                    box += '<div class="msgaddemojibutt"><%= image_tag("/assets/addemoji.svg") %></div>'
+                    box += '<div class="upbox" id="up_box_<%= @conversation.id %>">'
+                        box += '<% @conversation.user_msgs.each do |user_msg| %>'
+                            box += '<% if user_msg.user_id == current_user.id %>'
+                                box += '<p class="message upmsg upmsgright">'
+                                    box += '<%= user_msg.message %>'
+                                box += '</p>'
+                            box += '<% else %>'
+                                box += '<p class="message upmsg upmsgleft">'
+                                    box += '<%= user_msg.message %>'
+                                box += '</p>'
+                            box += '<% end %>'
+                        box += '<% end %>'
+                    box += '</div>'
+                    box += '</div>'
+                    box += '</div>'
 
-			box += '<div class="uptype" id="up_input_<%= @conversation.id %>">';
-				box += '<input class="upwritesend" id="UB<%= @conversation.id %>_message_button" type="button" />';
-				box += '<input class="upwrite" id="UB<%= @conversation.id %>_new_message" placeholder="msgup" />';
-			box += '</div>';
-			box += '</div>';
+                    box += '<div class="uptype" id="up_input_<%= @conversation.id %>">'
+                        box += '<input class="upwritesend" id="UB<%= @conversation.id %>_message_button" type="button" />'
+                        box += '<input class="upwrite" id="UB<%= @conversation.id %>_new_message" placeholder="click2msg" />'
+                    box += '</div>'
+                box += '</div>'
+            box += '</div>'
 
-			$('.firstbox').append(box);
+			$('.chats').append(box);
+
+		    // $(".upwrite").focus(function(event){
+		    //   $(this).parent().closest('#upactive').fadeTo(800, 1);
+		    //   $(this).attr('placeholder', 'msgup')
+		    // }).blur(function(event){
+		    //   $(this).parent().closest('#upactive').fadeTo(800, 0.3);
+		    //   $(this).attr('placeholder', 'click2msg')
+		    // });
+
+		    $('.upcontain').click(function(){
+			    $(this).parent().closest('#upactive').addClass('opaque').siblings('.opaque').removeClass('opaque');
+			    $('.uptype').not($(this)).fadeOut();
+			    $(this).siblings('.uptype').show().stop();
+			});
 
 			//run script
 			var page_url = window.location.href;
@@ -64,7 +89,14 @@ $(document).ready(function(){
 			channel.bind("broadcast", function(data) {
 				newest_message = data.body;
 				console.log(newest_message);
-				$("#up_box_<%= @conversation.id %>").append("<p class=\"message\">" + newest_message + "</p>");
+				if (<%= current_user.id %> == data.id){
+				$("#up_box_<%= @conversation.id %>").append("<p class=\"message upmsg upmsgright\">" + newest_message + "</p>");
+				}
+				else {
+					$("#up_box_<%= @conversation.id %>").append("<p class=\"message upmsg upmsgleft\">" + newest_message + "</p>");
+				}
+				var $upb = $('.upbox');
+				$upb[0].scrollTop = $upb[0].scrollHeight;
 			});
 
 			// scroll from bottom up

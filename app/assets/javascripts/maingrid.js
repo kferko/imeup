@@ -17,8 +17,16 @@ $(function () {
     options = {
         cellHeight: 80,
         verticalMargin: 10,
+        width: 12,
     };
     $('.main').gridstack(options);
+
+    options = {
+        cellHeight: 80,
+        verticalMargin: 10,
+        width: 10
+    };
+    $('.chats').gridstack(options);
 
         options = {
         cellHeight: 50,
@@ -27,8 +35,4 @@ $(function () {
     };
     $('.bott').gridstack(options);
 
-});
-
-$('.leftbar').gridstack({
-    resizable: false
 });

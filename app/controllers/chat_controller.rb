@@ -7,7 +7,7 @@ class ChatController < WebsocketRails::BaseController
 
 			user_msg = UserMsg.create(message: message[:body], conversation_id: message[:conversation_id], user_id: current_user.id)
 
-			WebsocketRails[id].trigger "broadcast", {name: current_user.email, body: message[:body]}
+			WebsocketRails[id].trigger "broadcast", {name: current_user.email, body: message[:body], id: current_user.id }
 		end
 	end
 end

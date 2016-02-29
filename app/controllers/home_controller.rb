@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-  def index
+  def index 
+    @conversation=Conversation.all.first
   	if !current_user
   		redirect_to root_path
   	end

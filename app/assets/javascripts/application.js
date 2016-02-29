@@ -48,9 +48,20 @@ $(document).on('DOMMouseScroll mousewheel', '.Scrollable', function(ev) {
 });
 
 $(document).ready(function() {
-    $("a").click(function () {
-    var id = $(this).attr("rel");
-    $(".sidedisplay").hide();
-    $("#" + id).show();
+    $("#me_top_1").on("click", function(){
+        $("#profile").show();
+        $("#consearch").hide();
+        $("#contacts").hide();
+    });
+    $("#up_top_1").on("click", function(){
+        $("#contacts").show();
+        $("#consearch").hide();
+        $("#profile").hide();
+    });
+    $("#eye_top_1").on("click", function(){
+        $("#consearch").show();
+        $("#profile").hide();
+        $("#contacts").hide();
+    });
 });
-});
+

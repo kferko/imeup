@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     get '/' => 'intro#index'
 
   get '/up_box' => 'home#up_box'
+  
+  resources :profiles, only: [:edit]
 
   devise_for :users
 
